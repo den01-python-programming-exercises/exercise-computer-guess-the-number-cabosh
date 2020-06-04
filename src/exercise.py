@@ -7,6 +7,7 @@ def main():
     high = 10
     low = 1
     #Creating variables for high and low values
+    guesses = 0
 
     while True:
     #Creating while loop to keep the process running until answer is correct
@@ -21,7 +22,8 @@ def main():
 
             if user == "yes":
             #Checks if the computers guess was correct
-                print("I guessed your number!")
+                guesses = guesses + 1
+                print(f"I got your number in {guesses} guesses!")
                 break
                 #Breaks from loop, ends the process
 
@@ -29,6 +31,7 @@ def main():
             #Checks if the computers guess was incorrect
                 highlow = input("Is your number higher or lower than " + str(guess) + "? ")
                 #Created a variable asking for input to find whether the number is higher or lower than the guess
+                guesses = guesses + 1
 
             if highlow == "higher":
                 low = guess + 1
